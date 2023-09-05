@@ -1,5 +1,5 @@
 #!/usr/bin/python3
 for char_code in range(ord('a'), ord('z') + 1):
-    if char_code not in (ord('q'), ord('e')):
+    if char_code != ord('e') and char_code != ord('q'):
         print("{}".format(chr(char_code)), end="")
-print("")
+print()
