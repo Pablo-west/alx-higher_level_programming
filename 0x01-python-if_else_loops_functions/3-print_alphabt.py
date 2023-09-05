@@ -2,4 +2,3 @@
 for char in range(ord('a'), ord('z') + 1):
     if chr(char) not in 'qe':
         print(f"{chr(char)}", end='')
-        print("")
