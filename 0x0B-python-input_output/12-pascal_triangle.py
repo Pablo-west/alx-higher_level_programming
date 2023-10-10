@@ -1,19 +1,21 @@
 #!/usr/bin/python3
 """pascal_traigle module."""
 
-
 def pascal_triangle(n):
-    """ pascal traigle class body.
-    """
     if n <= 0:
         return []
 
-    triangles = [[1]]
-    while len(triangles) != n:
-        tri = triangles[-1]
-        tmp = [1]
-        for i in range(len(tri) - 1):
-            tmp.append(tri[i] + tri[i + 1])
-        tmp.append(1)
-        triangles.append(tmp)
-    return
+    triangle = []
+
+    for i in range(n):
+        row = []
+        for j in range(i + 1):
+            if j == 0 or j == i:
+                row.append(1)
+            else:
+                # Calculate the value as the sum of the two values above it in the previous row
+                prev_row = triangle[i - 1]
+                row.append(prev_row[j - 1] + prev_row[j])
+        triangle.append(row)
+
+    return triangle
