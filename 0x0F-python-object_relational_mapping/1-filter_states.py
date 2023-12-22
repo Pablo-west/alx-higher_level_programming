@@ -13,6 +13,4 @@ if __name__ == "__main__":
     rows = c.fetchall()
     for row in rows:
         print(row)
-    c.close()
-    db.close()
 
